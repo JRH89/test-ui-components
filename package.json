@@ -2,7 +2,7 @@
   "name": "test-ui-components",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jrh89.github.io/test-ui-components",
+  "homepage": "https://test-ui-components.vercel.app/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
