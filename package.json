@@ -12,7 +12,7 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "tailwind-rn": "^4.2.0",
-    "ui-hook-react-lib": "^1.1.9",
+    "ui-hook-react-lib": "^1.2.58",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

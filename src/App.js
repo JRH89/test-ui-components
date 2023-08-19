@@ -6,7 +6,7 @@ import img4 from './39d3676a-a731-4263-9189-5a395352f991.png'
 import img5 from './64338337-09e5-4828-8ec5-8fba19ec0bb7.png'
 import img6 from './805944df-8d01-4e84-b49e-1950fa5be1ca.png'
 import { useEffect, useState } from 'react'
-import { Gallery, Button, ProgressBar, useLocalStorage, StyledInput } from 'ui-hook-react-lib'
+import { Gallery, Button, ProgressBar, useLocalStorage, StyledInput, Toast, showToast } from 'ui-hook-react-lib'
 import 'ui-hook-react-lib/dist/bundle.css'
 
 function LocalStorageTest() {
@@ -15,6 +15,7 @@ function LocalStorageTest() {
   const [password, setPassword] = useState('')
   const [loggedIn, setLoggedIn] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [list, setList] = useState([])
 
   useEffect(() => {
     const storedCount = JSON.parse(localStorage.getItem('count'))
@@ -82,11 +83,11 @@ function LocalStorageTest() {
   }
 
   return (
-    <>
+    <div>
       <ProgressBar />
       <div style={{ margin: '1rem', marginTop: '2rem', justifyContent: 'center', display: 'flex', flexDirection: 'column' }}>
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', maxWidth: '800px', alignSelf: 'center', gap: '2rem' }}>
-          <Button text="Menu" className='button menu' onClick={handleMenuButtonClick} />
+          <Button text="Menu" className='button' onClick={handleMenuButtonClick} />
           <h1 style={{ margin: 0 }}>
             Library Demo
           </h1>
@@ -142,10 +143,21 @@ function LocalStorageTest() {
                 </div>}</div>
           </div>
         )}
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '1rem', marginTop: '2rem' }}>
+          <Button className='button submit' text={'Success'} onClick={() => showToast(setList, 'success', 'This is a success toast', 2000)} />
+
+          <Button className='button delete' text={'Danger'} onClick={() => showToast(setList, 'danger', 'This is a danger toast', 3000)} />
+
+          <Button className='button menu' text={'Info'} onClick={() => showToast(setList, 'info', 'This is an info toast', 2000)} />
+
+          <Button className='button search' text={'Warning'} onClick={() => showToast(setList, 'warning', 'This is a warning toast', 4000)} />
+
+          <Toast toastlist={list} position="top-right" setList={setList} />
+        </div>
 
         <div style={{ height: '8000px' }}></div>
       </div>
-    </>
+    </div >
   )
 }
 
