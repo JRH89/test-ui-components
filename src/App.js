@@ -1,10 +1,10 @@
 
-import img1 from './0192f219-8b4b-4925-a814-7f238b64c255.png'
-import img2 from './03298f29-d59e-4da2-a4c2-fce9bc7dd28d.png'
-import img3 from './1e4648ea-fcae-4cf9-bb47-bd4576ff2d69.png'
-import img4 from './39d3676a-a731-4263-9189-5a395352f991.png'
-import img5 from './64338337-09e5-4828-8ec5-8fba19ec0bb7.png'
-import img6 from './805944df-8d01-4e84-b49e-1950fa5be1ca.png'
+import img1 from './img1.png'
+import img2 from './img3.png'
+import img3 from './img4.png'
+import img4 from './project0.png'
+import img5 from './mycard_android.png'
+import img6 from './preview.png'
 import { useEffect, useState } from 'react'
 import { Gallery, Button, ProgressBar, useLocalStorage, StyledInput, Toast, showToast } from 'ui-hook-react-lib'
 import 'ui-hook-react-lib/dist/bundle.css'
@@ -81,7 +81,7 @@ function LocalStorageTest() {
 
   const options = {
     autoplay: true,
-    interval: 5000,
+    interval: 2000,
   }
 
   return (
@@ -155,7 +155,7 @@ function LocalStorageTest() {
         <h2 style={{ margin: 0, textAlign: 'center', marginTop: '1em' }}>
           Toast Demo
         </h2>
-        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '1em', marginTop: '2em' }}>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '1em', marginTop: '.5em' }}>
 
           <Button className='button submit' text={'Success'} onClick={() => showToast(setList, 'success', 'This is a success toast', 2000)} />
 
