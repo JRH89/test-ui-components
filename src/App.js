@@ -152,7 +152,7 @@ function LocalStorageTest() {
 
           <Button className='button search' text={'Warning'} onClick={() => showToast(setList, 'warning', 'This is a warning toast', 4000)} />
 
-          <Toast toastlist={list} position="top-right" setList={setList} />
+          <Toast toastlist={list} position="bottom-right" setList={setList} />
         </div>
 
         <div style={{ height: '8000px' }}></div>
