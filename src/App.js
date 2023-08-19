@@ -157,13 +157,13 @@ function LocalStorageTest() {
         </h2>
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '1em', marginTop: '.5em' }}>
 
-          <Button className='button submit' text={'Success'} onClick={() => showToast(setList, 'success', 'This is a success toast', 2000)} />
+          <Button className='button submit' text={'Success'} onClick={() => showToast(setList, 'success', 'This is a success toast', 3000)} />
 
           <Button className='button delete' text={'Danger'} onClick={() => showToast(setList, 'danger', 'This is a danger toast', 3000)} />
 
-          <Button className='button menu' text={'Info'} onClick={() => showToast(setList, 'info', 'This is an info toast', 2000)} />
+          <Button className='button menu' text={'Info'} onClick={() => showToast(setList, 'info', 'This is an info toast', 3000)} />
 
-          <Button className='button search' text={'Warning'} onClick={() => showToast(setList, 'warning', 'This is a warning toast', 4000)} />
+          <Button className='button search' text={'Warning'} onClick={() => showToast(setList, 'warning', 'This is a warning toast', 3000)} />
 
           <Toast toastlist={list} position="bottom-right" setList={setList} />
         </div>
