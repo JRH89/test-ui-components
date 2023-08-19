@@ -87,19 +87,22 @@ function LocalStorageTest() {
   return (
     <div>
       <ProgressBar />
-      <div style={{ margin: '1rem', marginTop: '2rem', justifyContent: 'center', display: 'flex', flexDirection: 'column' }}>
-        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', maxWidth: '800px', alignSelf: 'center', gap: '2rem' }}>
+      <div style={{ margin: '1rem', marginTop: '1rem', justifyContent: 'center', display: 'flex', flexDirection: 'column' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', maxWidth: '800px', alignSelf: 'center', gap: '1rem' }}>
           <Button text="Menu" className='button' onClick={handleMenuButtonClick} />
           <h2 style={{ margin: 0 }}>
             Library Demo
           </h2>
-          <Button text="Search" className="button search" onClick={handleSearchButtonClick}
-          />
+          <p style={{ margin: 0 }}>npm i ui-hook-react-lib</p>
+
         </div>
 
         {loggedIn ? (
           <div>
-            <div style={{ marginBottom: '1rem' }}></div>
+            <div style={{ marginBottom: '1rem', marginTop: '1em' }}></div>
+            <h2 style={{ margin: 0, textAlign: 'center', marginBottom: '.5em' }}>
+              useLocalStorage()
+            </h2>
             <div style={{ marginBottom: '1rem', fontSize: '16pt', textAlign: 'center' }}>
               Count: {count}
             </div>
@@ -107,8 +110,12 @@ function LocalStorageTest() {
               <Button className='button submit' text="Increase" onClick={() => setCount(count + 1)} />
               <Button className='button delete' text="Reset" onClick={() => setCount(0)} />
             </div>
-            <div style={{ justifyContent: 'center', display: 'flex' }}>
-              <div style={{ marginTop: '2rem', border: '1px solid black', width: '50%', justifyContent: "center" }}>
+            <h2 style={{ margin: 0, marginTop: '.5em', textAlign: 'center' }}>
+              Autoplay Image Gallery
+            </h2>
+            <div style={{ justifyContent: 'center', display: 'flex', }}>
+              <div style={{ marginTop: '.5rem', border: '1px solid black', width: '50%', justifyContent: "center" }}>
+
                 <Gallery items={items} options={options} />
               </div>
             </div>
@@ -123,29 +130,33 @@ function LocalStorageTest() {
             <div style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px', maxWidth: '400px', textAlign: 'center' }}>
               {!loggedIn &&
                 <>
-                  <h2>Login</h2>
-                  <StyledInput
+                  <h2 style={{ margin: 0, marginBottom: '1em' }}>Login</h2>
+                  <div style={{ gap: '.2em', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}><StyledInput
                     type="email"
-                    style={{ padding: '8px', border: '1px solid #ccc', borderRadius: '4px', marginBottom: '1rem', width: '100%' }}
+                    style={{ padding: '8px', border: '1px solid #ccc', borderRadius: '4px', width: '100%', }}
                     placeholder="Email"
                     onChange={handleEmailChange}
                   />
-                  <StyledInput
-                    type="password"
-                    style={{ padding: '8px', border: '1px solid #ccc', borderRadius: '4px', marginBottom: '1rem', width: '100%' }}
-                    placeholder="Password"
-                    onChange={handlePasswordChange}
-                  />
-                  <div style={{ display: 'flex', flexDirection: "row", justifyContent: "space-evenly", marginTop: '2rem' }}>
+                    <StyledInput
+                      type="password"
+                      style={{ padding: '8px', border: '1px solid #ccc', borderRadius: '4px', width: '100%' }}
+                      placeholder="Password"
+                      onChange={handlePasswordChange}
+                    /></div>
+                  <div style={{ display: 'flex', flexDirection: "row", justifyContent: "center", marginTop: '2em', gap: '1em' }}>
                     <Button text="Login" className='button menu' onClick={handleLoginSubmit} />
-                    <Button text="Close" className='button delete' onClick={handleCloseModal} />
+                    <Button text="Close" className='button search' onClick={handleCloseModal} />
                   </div>
                 </>}{loggedIn && <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', gap: '2rem' }}> <Button text="Logout" className='button search' onClick={handleLogout} />
                   <Button text="Close" className='button delete' onClick={handleCloseModal} />
                 </div>}</div>
           </div>
         )}
-        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '1rem', marginTop: '2rem' }}>
+        <h2 style={{ margin: 0, textAlign: 'center', marginTop: '1em' }}>
+          Toast Demo
+        </h2>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '1em', marginTop: '2em' }}>
+
           <Button className='button submit' text={'Success'} onClick={() => showToast(setList, 'success', 'This is a success toast', 2000)} />
 
           <Button className='button delete' text={'Danger'} onClick={() => showToast(setList, 'danger', 'This is a danger toast', 3000)} />
