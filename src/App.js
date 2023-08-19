@@ -28,7 +28,7 @@ function LocalStorageTest() {
     if (storedLoggedIn !== null) {
       setLoggedIn(storedLoggedIn)
     }
-  }, [])
+  }, [setCount])
 
 
   const handleEmailChange = (e) => {
@@ -42,6 +42,7 @@ function LocalStorageTest() {
   }
 
   const handleMenuButtonClick = () => {
+
     setIsModalOpen(true)
   }
 
@@ -62,6 +63,7 @@ function LocalStorageTest() {
 
   const handleLogout = () => {
     setLoggedIn(false)
+    localStorage.setItem('loggedIn', false)
   }
 
   const handleSearchButtonClick = () => {
@@ -88,9 +90,9 @@ function LocalStorageTest() {
       <div style={{ margin: '1rem', marginTop: '2rem', justifyContent: 'center', display: 'flex', flexDirection: 'column' }}>
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', maxWidth: '800px', alignSelf: 'center', gap: '2rem' }}>
           <Button text="Menu" className='button' onClick={handleMenuButtonClick} />
-          <h1 style={{ margin: 0 }}>
+          <h2 style={{ margin: 0 }}>
             Library Demo
-          </h1>
+          </h2>
           <Button text="Search" className="button search" onClick={handleSearchButtonClick}
           />
         </div>
@@ -112,7 +114,7 @@ function LocalStorageTest() {
             </div>
           </div>
         ) : (
-          <p>
+          <p style={{ textAlign: 'center', marginTop: '3em' }}>
             Please log in to access the rest of the content.
           </p>
         )}
@@ -135,11 +137,11 @@ function LocalStorageTest() {
                     onChange={handlePasswordChange}
                   />
                   <div style={{ display: 'flex', flexDirection: "row", justifyContent: "space-evenly", marginTop: '2rem' }}>
-                    <Button text="Login" className='button' onClick={handleLoginSubmit} />
-                    <Button text="Close" className='button' onClick={handleCloseModal} />
+                    <Button text="Login" className='button menu' onClick={handleLoginSubmit} />
+                    <Button text="Close" className='button delete' onClick={handleCloseModal} />
                   </div>
-                </>}{loggedIn && <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', gap: '2rem' }}> <Button text="Logout" className='button' onClick={handleLogout} />
-                  <Button text="Close" className='button' onClick={handleCloseModal} />
+                </>}{loggedIn && <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', gap: '2rem' }}> <Button text="Logout" className='button search' onClick={handleLogout} />
+                  <Button text="Close" className='button delete' onClick={handleCloseModal} />
                 </div>}</div>
           </div>
         )}
@@ -156,6 +158,8 @@ function LocalStorageTest() {
         </div>
 
         <div style={{ height: '8000px' }}></div>
+        <p style={{ textAlign: 'center' }}>Thank you for testing my npm package demo!<br />-gamedevjared89</p>
+
       </div>
     </div >
   )
