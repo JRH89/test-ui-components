@@ -2,12 +2,12 @@
 {
 	font-size: 14px;
 	position: fixed;
-	z-index: 10;
+	z-index: 9999
 }
 
 .bottom-right
 {
-	bottom: 1em;
+	bottom: 2em;
 	right: .5em;
 	animation: toast-in-right .7s;
 }
@@ -39,13 +39,13 @@
 
 .toast
 {
-	height: 3.125em;
+	height: 8em;
 	/* 50px in em */
 	width: 22.8125em;
 	/* 365px in em */
 	color: #fff;
 	padding: 1.25em 0.9375em 0.625em 0.625em;
-	/* 20px 15px 10px 10px in em */
+	/* 20px 15px 20px 15px in em */
 }
 
 .container button
@@ -94,12 +94,12 @@
 
 .success
 {
-	background-color: green;
+	background-color: limegreen;
 }
 
 .danger
 {
-	background-color: red;
+	background-color: darkred;
 }
 
 .info
@@ -109,5 +109,5 @@
 
 .warning
 {
-	background-color: darkorange;
+	background-color: yellow;
 }
