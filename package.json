@@ -21,8 +21,8 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build",
     "build:css": "tailwindcss build styles.css -o output.css",
-    "build:tailwind": "tailwindcss --input input.css --output tailwind.css --no-autoprefixer && tailwind-rn",
-    "dev:tailwind": "concurrently \"tailwindcss --input input.css --output tailwind.css --no-autoprefixer --watch\" \"tailwind-rn --watch\""
+    "build:tailwind": "tailwindcss --input input.css --output tailwind.css --no-autoprefixer",
+    "dev:tailwind": "concurrently \"tailwindcss --input input.css --output tailwind.css --no-autoprefixer --watch\" "
   },
   "eslintConfig": {
     "extends": [
